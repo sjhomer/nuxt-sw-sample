@@ -1,34 +1,10 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
-
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
-
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.2.0/css/all.css" />
     <section class="main-content columns">
       <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">
-          General
+          Star Wars Encyclopedia
         </p>
         <ul class="menu-list">
           <li
@@ -38,8 +14,9 @@
             <NuxtLink
               :to="item.to"
               exact-active-class="is-active"
+              style="text-transform: capitalize;"
             >
-              <b-icon :icon="item.icon" /> {{ item.title }}
+              {{ item.title }}
             </NuxtLink>
           </li>
         </ul>
@@ -53,22 +30,21 @@
 </template>
 
 <script>
+import { ApiTypes } from '@/lib/api'
+
 export default {
   name: 'DefaultLayout',
   data () {
     return {
-      items: [
+      items: Object.keys(ApiTypes).map(key => (
         {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
+          title: key,
+          to: {
+            path: '/',
+            query: { type: key }
+          }
         }
-      ]
+      ))
     }
   }
 }
