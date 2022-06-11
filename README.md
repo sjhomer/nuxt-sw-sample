@@ -1,4 +1,4 @@
-# nuxt-test
+# nuxt-sw-sample
 
 ## Demo Considerations
 
