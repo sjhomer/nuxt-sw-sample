@@ -4,6 +4,8 @@
 
 [A simple page](pages/index.vue) which features a grid of [cards](components/Card.vue) based on a sampling of the famous [Star Wars Dev API](https://swapi.dev)
 
+A brief video demo of the project is available [here 🎥](https://drive.google.com/file/d/1-xBl62M_wc9_HuH91i0PTU71MrTwceS0/view?usp=sharing).
+
 ### [API](lib/api.ts)
 - A rudimentary API handler for URI paths and content formatter help pull different data, and prepare data for display. Descriptions are dynamic based on the selected content type isolating unique properties from the API response per API type
 - Features a sidebar menu which lets you switch between the different API content types
